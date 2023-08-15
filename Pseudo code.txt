@@ -1,0 +1,17 @@
+*UI node slections
+gridContainer = 
+
+*Declare global vairables*
+gridSize = updateTileSize()
+tileSize = 650/gridsize
+tileColour
+drawingMode //erase,solidColour,rainbow
+
+*decalre global funcition*
+createTiles = 
+updateTileSize = function(){}//will default to 16x16px size
+updateDrawingMode
+clearWorkSpace
+updateDrawingMode
+
+
