@@ -2,6 +2,8 @@ body{
     height:100vh;
     display:flex;
     flex-direction: column;
+    min-width: 800px;
+    overflow-x:hidden;
 }
 
 .container{
@@ -28,13 +30,13 @@ body{
 
 /*section-1*/
 .section-1{
-    flex:1;
+    flex:4;
     width: 95%;
     align-self: center;
-    background-color:rgb(241, 234, 234);
+    background-color:rgba(95, 121, 84, 0.459);
     justify-content: center;
-    padding-top: 80px;
-    overflow-x: auto;
+    padding-top: 5%;
+    min-height: max-content;
 }
 
 .section-1 .grid{
@@ -53,18 +55,55 @@ body{
 
 .grid .tiles{
     background-color: white;
-    border: 0.5px solid grey;
+    border: 0.01px solid rgba(128, 128, 128);
     box-sizing: border-box;
 }
 
 /*section-2*/
 .section-2{
+    flex:2;
     box-sizing: border-box;
     width: 95%;
     align-self: center;
-    background-color:rgb(241, 234, 234);
+    background-color:rgba(95, 121, 84, 0.459);
+    padding: 10px 30px;
+    min-width:max-content;
+    justify-content: center;
 }
 
+.section-2 div.tools{
+    padding:0px 50px;
+    flex:1;
+    max-width: 900px;
+    justify-content: space-between;
+}
+
+.section-2 .tools div.options{
+    flex-direction: column;
+    min-width: 300px;
+    
+}
+
+.options button{
+    max-width: 100px;
+}
+
+.options.container p{
+    align-self: center;
+    font-size: 25px;
+    font-weight: bold;
+    color:rgb(26, 7, 7);
+    width:100%;
+    text-align: center;
+    border-bottom:solid 2px black;
+
+}
+
+div.controls.container, div.mode.container{
+    display:flex;
+    flex-direction: row;
+    gap:30px;
+}
 /*footer*/
 .footer{
     box-sizing: border-box;
@@ -75,6 +114,6 @@ body{
     align-items: center;
     height: 50px;
     font-size: 20px;
-    color:rgb(241, 234, 234);
+    color:white;
     font-weight: 700;
 }

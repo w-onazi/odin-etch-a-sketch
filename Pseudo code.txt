@@ -3,7 +3,7 @@ gridContainer =
 
 *Declare global vairables*
 gridSize = updateTileSize()
-tileSize = 650/gridsize
+gridSpace = 650/gridsize
 tileColour
 drawingMode //erase,solidColour,rainbow
 
