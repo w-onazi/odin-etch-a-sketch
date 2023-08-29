@@ -53,7 +53,7 @@ body{
     overflow: hidden;
 }
 
-.grid .tiles{
+.grid .tile{
     background-color: white;
     border: 0.01px solid rgba(128, 128, 128);
     box-sizing: border-box;
