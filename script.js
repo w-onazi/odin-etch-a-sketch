@@ -1,6 +1,7 @@
 //UI Nodes
 const gridContainer = document.querySelector(".grid");
 const gridSizes = document.querySelector(".grid-sizes");
+const clearBtn = document.querySelector(".controls.container");
 
 //Global Variables
 let gridSize;
@@ -9,11 +10,12 @@ updateGrid(16);
 //EventListeners
 gridSizes.addEventListener("change",updateGrid);
 window.addEventListener("dragstart",cancelDrag);
+clearBtn.addEventListener("click",clearGrid);
 
 
 //Functions 
 function updateGrid(e){
-    clearGrid();
+    deleteChildElements();
     if (typeof(e)==="number"){
         gridSize = e;
     }else{
@@ -34,7 +36,7 @@ function updateGrid(e){
 
 }
 
-function clearGrid(){
+function deleteChildElements(){
     if(gridContainer.hasChildNodes()){
         while(gridContainer.hasChildNodes()){
             gridContainer.firstChild.remove();
@@ -47,6 +49,14 @@ function cancelDrag(e){
     if (e.target.classList.value==="tile"){
         e.preventDefault();//This prevent the drag event from starting when it's triggered
     }
+}
+
+
+function clearGrid(e){
+    const tiles = document.querySelectorAll(".tile");
+    tiles.forEach((tile)=>{
+        tile.style.backgroundColor="white";
+    });
 }
 
 function drawOnTile(e){
