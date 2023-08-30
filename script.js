@@ -8,6 +8,7 @@ const penColor = "black";
 updateGrid(16);
 //EventListeners
 gridSizes.addEventListener("change",updateGrid);
+window.addEventListener("dragstart",cancelDrag);
 
 
 //Functions 
@@ -28,7 +29,7 @@ function updateGrid(e){
     const tiles = document.querySelectorAll(".tile");
     tiles.forEach(tile => {
         tile.addEventListener("mousedown",drawOnTile);
-        tile.addEventListener("mouseover",drawOnAdjacentTiles);
+        tile.addEventListener("mouseenter",drawOnAdjacentTiles);
     });
 
 }
@@ -39,16 +40,26 @@ function clearGrid(){
             gridContainer.firstChild.remove();
         };
     }
+}
 
+//This function was introduced due to drag event initiating when filled tiles are clicked
+function cancelDrag(e){
+    if (e.target.classList.value==="tile"){
+        e.preventDefault();//This prevent the drag event from starting when it's triggered
+    }
 }
 
 function drawOnTile(e){
-    e.target.style.backgroundColor=penColor;
+    if (e.target.style.backgroundColor===penColor){
+        return;
+    }else{
+        e.target.style.backgroundColor=penColor;
+    }
+    console.log(e);
 }
 
 function drawOnAdjacentTiles(e){
-    if (e.buttons===1){
-        console.log(e);
+    if (e.buttons>0){
         e.target.style.backgroundColor=penColor;
     }
 }
