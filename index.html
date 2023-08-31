@@ -29,14 +29,32 @@
                         <option value="64">64 x 64</option>
                         <option value="80">80 x 80</option>
                     </select>
-                    <button>ERASE</button>
+                    <button value="clearBtn">CLEAR</button>
+
+                    <table style="width: auto">
+                        <tr><th>GRID LINES</th></tr>
+                        <tr><td>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                            
+                        </td></tr>
+                    </table>
+
                 </div>
             </div>
             
             <div class ="options container"> 
-                <p>MODES</p>
+                <p>TOOLS</p>
                 <div class="modes container">
-                    <button>ERASE</button>
+                    <button id="eraseBtn">ERASER</button>
+                    <table style="width: auto">
+                        <tr><th>PEN COLOUR</th></tr>
+                        <tr><td>
+                            <div class = "color-box"><input type ="color" id="color-selector"></div>
+                        </td></tr>
+                    </table>
                 </div>
             </div>
         </div>
